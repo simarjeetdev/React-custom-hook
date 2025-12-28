@@ -3,8 +3,7 @@ import Card from './components/card'
 import usefetch from './hooks/usefetch'
 
 function App() {
-  const api = import.meta.env.VITE_API_URL
-  const { data, err, loading } = usefetch(api)
+  const { data, err, loading } = usefetch("https://api.escuelajs.co/api/v1/products")
 
   if (loading) return <h1 className='bg-black w-full h-screen flex justify-center items-center text-white font-bold'>LOADING...</h1>
   if (err) return <h1 className='bg-black w-full h-screen flex justify-center items-center text-white font-bold'>ERROR OCCURED....</h1>
